@@ -41,23 +41,23 @@ function generatePassword(){
   var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   var special = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', ';', ':', '"', ',', '.', '/', '[', ']', '|', '`', '~'];
 
-   // Provide user with different prompts to select password criteria
-   var userChoices = {
-    lower: prompt("Lowercase Characters? (Yes/No): ", "Yes"),
-    upper: prompt("Uppercase Characters? (Yes/No): ", "Yes"),
-    numbers: prompt("Numbers? (Yes/No): ", "Yes"),
-    special: prompt("Special Characters? (Yes/No): ", "Yes"),
+  // Provide user with different prompts to select password criteria
+  var userChoices = {
+    lower: prompt("Lowercase Characters? ", "Yes"),
+    upper: prompt("Uppercase Characters? ", "Yes"),
+    numbers: prompt("Numbers? ", "Yes"),
+    special: prompt("Special Characters? ", "Yes"),
     passLength: prompt("Enter a number between 8 and 128 to set the length of your new password.")
   };
-
+  
   // Sets a minimum and maximum amount of 8 and 128 respectively to constrain the
   // password's length
   var passLimit = ((userChoices.passLength >= 8) && (userChoices.passLength <= 128));
-
+  
   // Creates an empty string type variable for the new password
   var newPassword = "";
 
-  // Until the loop meets the user's limit, add new characters from 
+    // Until the loop meets the user's limit, add new characters from 
     // each selection to my newly generated password
     while(userChoices.passLength >= newPassword.length){
 
@@ -69,18 +69,22 @@ function generatePassword(){
       let numberSelected = (userChoices.numbers === "Yes") ? numbers[Math.floor(Math.random() * numbers.length)] : "";
       let specialSelected = (userChoices.special === "Yes") ? special[Math.floor(Math.random() * special.length)] : "";
 
-      // The new password will concatenate each new value from the arrays and populate a new string
-      newPassword = newPassword.concat(
+       
+        // The new password will concatenate each new value from the arrays and populate a new string
+        newPassword = newPassword.concat(
         lowerSelected, 
         upperSelected, 
         numberSelected, 
         specialSelected);
-
-        // If the password contains no text, the user will receive an alert stating the site cannot
+      
+      // If the password contains no text, the user will receive an alert stating the site cannot
       // generate a password and the password text will remain unchanged.
       if(newPassword === ""){
-        alert("No selected criteria for password. Unable to generate password.");
+        alert("No selected criteria. Unable to generate password.");
         newPassword = passwordText[1];
-      }
+      };
     };
-  }};
+  };
+  // return password to user in the textarea
+  return newPassword.slice(0, userChoices.passLength);
+};
