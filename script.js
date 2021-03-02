@@ -48,4 +48,11 @@ function generatePassword(){
     numbers: prompt("Numbers? (Yes/No): ", "Yes"),
     special: prompt("Special Characters? (Yes/No): ", "Yes"),
     passLength: prompt("Enter a number between 8 and 128 to set the length of your new password.")
-  }};
+  };
+
+  // Sets a minimum and maximum amount of 8 and 128 respectively to constrain the
+  // password's length
+  var passLimit = ((userChoices.passLength >= 8) && (userChoices.passLength <= 128));
+
+  // Creates an empty string type variable for the new password
+  var newPassword = ""};
