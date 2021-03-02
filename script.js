@@ -67,4 +67,11 @@ function generatePassword(){
       let lowerSelected = (userChoices.lower === "Yes") ? lowercase[Math.floor(Math.random() * lowercase.length)] : "";
       let upperSelected = (userChoices.upper === "Yes") ? uppercase[Math.floor(Math.random() * uppercase.length)] : "";
       let numberSelected = (userChoices.numbers === "Yes") ? numbers[Math.floor(Math.random() * numbers.length)] : "";
-      let specialSelected = (userChoices.special === "Yes") ? special[Math.floor(Math.random() * special.length)] : "";}}};
+      let specialSelected = (userChoices.special === "Yes") ? special[Math.floor(Math.random() * special.length)] : "";
+
+      // The new password will concatenate each new value from the arrays and populate a new string
+      newPassword = newPassword.concat(
+        lowerSelected, 
+        upperSelected, 
+        numberSelected, 
+        specialSelected)}}};
