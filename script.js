@@ -55,4 +55,16 @@ function generatePassword(){
   var passLimit = ((userChoices.passLength >= 8) && (userChoices.passLength <= 128));
 
   // Creates an empty string type variable for the new password
-  var newPassword = ""};
+  var newPassword = "";
+
+  // Until the loop meets the user's limit, add new characters from 
+    // each selection to my newly generated password
+    while(userChoices.passLength >= newPassword.length){
+
+      // Randomly select values inside each array given a user keeps the criteria
+      // Not selecting criteria will add no values from the specified arrays
+      if(passLimit){
+      let lowerSelected = (userChoices.lower === "Yes") ? lowercase[Math.floor(Math.random() * lowercase.length)] : "";
+      let upperSelected = (userChoices.upper === "Yes") ? uppercase[Math.floor(Math.random() * uppercase.length)] : "";
+      let numberSelected = (userChoices.numbers === "Yes") ? numbers[Math.floor(Math.random() * numbers.length)] : "";
+      let specialSelected = (userChoices.special === "Yes") ? special[Math.floor(Math.random() * special.length)] : "";}}};
