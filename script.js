@@ -74,4 +74,13 @@ function generatePassword(){
         lowerSelected, 
         upperSelected, 
         numberSelected, 
-        specialSelected)}}};
+        specialSelected);
+
+        // If the password contains no text, the user will receive an alert stating the site cannot
+      // generate a password and the password text will remain unchanged.
+      if(newPassword === ""){
+        alert("No selected criteria for password. Unable to generate password.");
+        newPassword = passwordText[1];
+      }
+    };
+  }};
