@@ -7,4 +7,4 @@ Once the user selects criteria and provides an adequate length, the password gen
 ![My Application Screenshot](https://github.com/tbsdvl/MyPasswordGenerator/blob/main/passwordgen.gif?raw=true)
 
 Link to the application
-![MyPasswordGenerator](https://tbsdvl.github.io/MyPasswordGenerator/)
+[MyPasswordGenerator](https://tbsdvl.github.io/MyPasswordGenerator/)
